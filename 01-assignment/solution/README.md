@@ -41,7 +41,9 @@
   ```
 
   Install suggested plugins, setup usrname and password
+
   In jenkins UI create new jenkins agent with label 'docker-agent' jnlp and get jnlp secret
+
   Run jenkins-agent as container from custom agent image
   ```
   docker build https://raw.githubusercontent.com/patelmanjeet/devops_assignment_collection/main/01-assignment/solution/jenkins-agent/Dockerfile -t jenkins/inbound-agent-docker
@@ -51,8 +53,6 @@
 
   Create Jenkins code-as-pipeline that will create docker image of World Clock API code
   [Jenkins Pipeline](task1/Jenkinsfile) - In Jenkins create pipline type job for this Jenkinsfile
-
-
 
 - ##### Task 3
   Run container on linux box for newly created image
