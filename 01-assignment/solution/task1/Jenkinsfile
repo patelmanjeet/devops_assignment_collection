@@ -12,7 +12,8 @@ pipeline {
         stage("Build Docker Image") {
             steps {
                 dir('01-assignment/solution/task1/') {
-                    sh 'docker build . -t worldclock/python-api:${BUILD_NUMBER}'
+                    sh 'docker build . -t worldclock-app:${BUILD_NUMBER}'
+                    sh 'docker tag worldclock-app:${BUILD_NUMBER} worldclock-app:latest'
                 }
             }
         }
