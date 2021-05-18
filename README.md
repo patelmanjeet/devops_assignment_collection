@@ -1,2 +1,5 @@
-# devops_assignment_collection
-Colllection of DevOps, Cloud, CICD assignment
+# Colllection Of DevOps, Cloud, CICD assignment
+
+1. [Assignment-1](01-assignment/) - Docker, Jenkins
+
+
