@@ -1,7 +1,7 @@
 # Solution - Assignment-1 - Docker, Jenkins
 
 - ##### Task 1
-  [Python base application code](/task1)
+  [Python base application code](task1/)
   ```
   # to run on local
   pip install -r requirements.txt
@@ -35,17 +35,28 @@
   newgrp docker
   ```
 
-  Run Jenkins & jenkins-agent as container
-  >  </br>
-  >
+  Run Jenkins container
+  ```
+  docker run -d -v jenkins_home:/var/jenkins_home --name jenkins-server -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
+  ```
+
+  Install suggested plugins, setup usrname and password
+  In jenkins UI create new jenkins agent with label 'docker-agent' jnlp and get jnlp secret
+  Run jenkins-agent as container from custom agent image
+  ```
+  docker build https://raw.githubusercontent.com/patelmanjeet/devops_assignment_collection/main/01-assignment/solution/jenkins-agent/Dockerfile -t jenkins/inbound-agent-docker
+  sudo chmod 666 /var/run/docker.sock
+  docker run -v /var/run/docker.sock:/var/run/docker.sock -d --init jenkins/inbound-agent-docker -url http://vm-ip:8080 <jnlp_secret> docker-agent
+  ```
 
   Create Jenkins code-as-pipeline that will create docker image of World Clock API code
-  >  </br>
-  >
+  [Jenkins Pipeline](task1/Jenkinsfile) - In Jenkins create pipline type job for this Jenkinsfile
+
 
 
 - ##### Task 3
   Run container on linux box for newly created image
-  >
-  >
+  ```
+  docker run -d --name app worldclock-app:latest
+  ```
 

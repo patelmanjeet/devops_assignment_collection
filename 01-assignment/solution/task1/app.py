@@ -10,8 +10,8 @@ while True:
         if r.status_code != 200:
             raise Exception("status_code" + r.status_code )
         jsonData = r.json()
-        print("{} - {}".format(datetime.now(),jsonData['currentDateTime']))
+        print("{} - {}".format(datetime.now(),jsonData['currentDateTime']),flush=True)
     except Exception as e:
-        print("{} - Fail to connect api server - {}".format(datetime.now(),e))
+        print("{} - Fail to connect api server - {}".format(datetime.now(),e),flush=True)
 
     time.sleep(60)
