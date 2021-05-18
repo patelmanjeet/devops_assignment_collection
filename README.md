@@ -1,5 +1,5 @@
-# Colllection Of DevOps, Cloud, CICD assignment
+# Collection Of DevOps, Cloud, CICD Assignment
 
-1. [Assignment-1](01-assignment/) - Docker, Jenkins
+- [Assignment-1](01-assignment/) - Docker, Jenkins
 
 
