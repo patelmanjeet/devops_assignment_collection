@@ -50,11 +50,10 @@
   ```
 
   Create Jenkins code-as-pipeline that will create docker image of World Clock API code<br />
-  [Jenkins Pipeline](task1/Jenkinsfile) - In Jenkins create pipline type job for this Jenkinsfile
+  [Jenkins Pipeline](task1/Jenkinsfile) - In Jenkins create pipeline type job for this Jenkinsfile
 
 - ##### Task 3
   Run container on linux box for newly created image
   ```
   docker run -d --name app worldclock-app:latest
   ```
-
