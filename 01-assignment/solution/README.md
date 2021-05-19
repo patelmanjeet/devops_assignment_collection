@@ -40,10 +40,8 @@
   docker run -d -v jenkins_home:/var/jenkins_home --name jenkins-server -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
   ```
 
-  Install suggested plugins, setup usrname and password
-
-  In jenkins UI create new jenkins agent with label 'docker-agent' jnlp and get jnlp secret
-
+  Install suggested plugins, setup usrname and password<br />
+  In jenkins UI create new jenkins agent with label 'docker-agent' jnlp and get jnlp secret<br />
   Run jenkins-agent as container from custom agent image
   ```
   docker build https://raw.githubusercontent.com/patelmanjeet/devops_assignment_collection/main/01-assignment/solution/jenkins-agent/Dockerfile -t jenkins/inbound-agent-docker
@@ -51,7 +49,7 @@
   docker run -v /var/run/docker.sock:/var/run/docker.sock -d --init jenkins/inbound-agent-docker -url http://vm-ip:8080 <jnlp_secret> docker-agent
   ```
 
-  Create Jenkins code-as-pipeline that will create docker image of World Clock API code
+  Create Jenkins code-as-pipeline that will create docker image of World Clock API code<br />
   [Jenkins Pipeline](task1/Jenkinsfile) - In Jenkins create pipline type job for this Jenkinsfile
 
 - ##### Task 3
